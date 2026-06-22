@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <h1 class="app-title"><i class="fas fa-cloud-sun"></i> WeatherNow</h1>
+
+    <div class="back-status" id="backStatus">Backend: <span id="backStatusText">waiting...</span></div>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="getWeather()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="error-msg" id="errorMsg">⚠️ City not found. Please try again.</div>
+
+    <div class="weather-card" id="weatherCard">
+
+      <div class="city-name" id="cityName">--</div>
+      <div class="country" id="country"></div>
+
+      <div class="weather-icon">
+      <div id="weatherEmoji" style="font-size: 80px; line-height: 1;">🌡️</div>
+      </div>
+
+      <div class="temperature" id="temperature">--°C</div>
+      <div class="description" id="description">--</div>
+
+      <div class="details-grid">
+        <div class="detail-box">
+          <i class="fas fa-tint"></i>
+          <span id="humidity">--%</span>
+          <small>Humidity</small>
+        </div>
+        <div class="detail-box">
+          <i class="fas fa-wind"></i>
+          <span id="windSpeed">-- km/h</span>
+          <small>Wind Speed</small>
+        </div>
+        <div class="detail-box">
+          <i class="fas fa-eye"></i>
+          <span id="visibility">-- km</span>
+          <small>Visibility</small>
+        </div>
+        <div class="detail-box">
+          <i class="fas fa-thermometer-half"></i>
+          <span id="feelsLike">--°C</span>
+          <small>Feels Like</small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loader" id="loader">
+      <i class="fas fa-spinner fa-spin"></i> Fetching weather...
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
